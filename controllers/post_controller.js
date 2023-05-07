@@ -4,10 +4,6 @@ const Like = require('../models/like');
 
 module.exports.create = async function(req, res){
     try{
-        if(req.body.content == ""){
-            req.flash('error', 'Post cannot be empty')
-            return res.redirect('back');
-        }
         let post = await Post.create({
             content: req.body.content,
             user: req.user._id
@@ -47,15 +43,6 @@ module.exports.destroy = async function(req, res){
             await Comment.deleteMany({post: req.params.id});
             
             post.deleteOne();
-            if(req.xhr){
-                console.log('xhr in post controller')
-                return res.status(200).json({
-                    data: {
-                        post_id: req.params.id
-                    },
-                    message: "Post deleted!"
-                });
-            }
 
             req.flash('success', 'Post and associated comments deleted!');
         }

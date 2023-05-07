@@ -48,15 +48,6 @@ module.exports.toggleLike = async function(req, res){
             // req.flash('success', 'Liked!');
             
         }
-        if(res.xhr){
-            console.log('xhr in like controller')
-            return res.status(200).json({
-                message: "Request successful!",
-                data: {
-                    deleted: deleted
-                }
-            })
-        }
 
     } catch (error) {
         console.log(error, 'error in like controller');

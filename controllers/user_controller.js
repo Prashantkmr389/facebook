@@ -1,6 +1,5 @@
 const { connect } = require('mongoose');
 const User = require('../models/user');
-const friendship = require('../models/friendship')
 const fs = require('fs')
 const path = require('path')
 module.exports.about = function(req, res){
@@ -66,7 +65,6 @@ module.exports.create = async function(req, res){
         if(!user){
 
             await User.create(req.body);
-            
             req.flash('success', 'User created successfully')
             return res.redirect('/user/signin');
         }
@@ -132,74 +130,4 @@ module.exports.update = async function(req, res){
         console.log(err, 'error in updating information')
         return res.redirect('back')
     }
-}
-
-// making freindship
-
-module.exports.add = async function(req, res){
-    try{
-        let to = req.params.id
-        let from = req.user._id
-        let friends = await friendship.findOne({
-            from_user: from,
-            to_user: to,
-        });
-        if(friends == null){
-            // console.log('friendship created')
-            let newFriend = await friendship.create({
-              from_user: from,
-              to_user: to,
-            });
-            // console.log(newFriend)
-            await User.updateOne({_id: from}, {$push: {friends: newFriend._id}})
-            req.flash('success', 'Friend added successfully')
-            return res.redirect('back')
-        }
-        else{
-            req.flash('error', 'Friend already exists')
-            return res.redirect('back')
-        }
-    }
-    catch(err){
-        console.log(err, 'error in creating friendship')
-        return res.redirect('back')
-    }
-    
-    // to create a friendship we need to check if the friendship already exists or no
-}
-
-// removing freindship
-
-module.exports.remove = async function(req, res){
-    try {
-        let to = req.params.id;
-        let from = req.user._id;
-        let friends = await friendship.findOne({
-          from_user: from,
-          to_user: to,
-        });
-        if (friends) {
-          await friendship.findByIdAndDelete(friends._id);
-          await User.findOneAndUpdate(
-            { _id: from },
-            { $pull: { friends: friends._id } }
-          );
-          req.flash("success", "Friend removed successfully");
-          return res.redirect("back");
-        } else {
-          req.flash("error", "Friend does not exists");
-          return res.redirect("back");
-        }
-    } catch (error) {
-        console.log(error, "error in removing friendship");
-    }
-}
-
-
-// for reset password
-
-module.exports.reset = function(req, res){
-    return res.render('reset', {
-        title: "Reset Password"
-    });
 }

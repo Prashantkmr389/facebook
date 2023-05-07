@@ -13,12 +13,12 @@
             $(showcomment[i]).toggle();
         })
     }
-    $(".chat-box").hide();
+
     $("#messageslider").click(function () {
 
         // to hide the message slider
 
-        $(".chat-box").toggle();
+        $("#messagebox").css({"display":"block"});
         this.style.display = "none";
 
         // to show the message slider
@@ -30,7 +30,7 @@
             
             // to hide the message slider
     
-            $(".chat-box").toggle();
+            $("#messagebox").toggle();
     
             this.style.display = "none";
     
@@ -47,6 +47,6 @@
       words = words.join(" ");
       return words;
     });
-    
-    
+
+
 }

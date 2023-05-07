@@ -17,9 +17,6 @@ router.use('/like', require('./likes'));
 /* GET home page. */
 router.get('/', home_controller.home);
 
-// for forgetting password
-
-router.use("/resetpassword", require('./passwordReset'));
 
 
 module.exports = router;

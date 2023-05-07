@@ -1,28 +1,3 @@
-body {
-    background-color: #f1f1f1;
-    font-family: "Roboto", sans-serif;
-}
-.dp {
-    display: flex;
-    align-items: center;
-    margin-right: auto;
-}
-
-.dp img {
-    /* shadow in profile pic */
-    
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.dp h3 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-}
 
 nav {
     background-color: #333;
@@ -84,60 +59,17 @@ nav a:hover {
     margin-bottom: 1rem;
 }
 
-/* #addNewPost{
+#addNewPost{
     /* to style a button */
     
-    /* color: aliceblue;
+    color: aliceblue;
     width: 100px;
-    padding: 9px; */
-    /* background-color: #f7aa2d;
+    padding: 9px;
+    background-color: #f5a623;
     font-size: 15px;
     text-align: left;
     font-weight: bold;
     text-align: center;
-}
-
-#addNewPost:hover{
-    background-color: #fa9c05;
-    color: #fff;
-} */ 
-
-button {
-    
-    /* background-color: #4CAF50; */
-    /* Green background */
-    border: none;
-    /* Remove border */
-    color: white;
-
-    font-weight: bold;
-    /* White text */
-    padding: 12px 24px;
-    /* Some padding */
-    text-align: center;
-    /* Center text */
-    text-decoration: none;
-    /* Remove underline */
-    display: inline-block;
-    /* Make it a block element */
-    font-size: 16px;
-    /* Increase font size */
-    cursor: pointer;
-    /* Change cursor on hover */
-    border-radius: 4px;
-    /* Add rounded corners */
-    transition: background-color 0.3s;
-    /* Add smooth transition */
-}
-
-#addNewPost {
-    background-color: #4CAF50;
-    /* Green */
-}
-#addNewPost:hover {
-    background-color: #3e8e41;
-    box-shadow: 0px 0px 5px 2px #ccc;
-    /* Darker green on hover */
 }
 
 
@@ -147,17 +79,12 @@ button {
 
 
 .feed {
-    
-    width: 50%;
+    max-width: 680px;
     margin: 0 auto;
 }
 
 .post {
-    /* to give shadow  */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-
     border: 1px solid #ddd;
-    border-radius: 5px;
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -170,8 +97,6 @@ button {
 }
 
 .post-header img {
-    /* to give shadown effect to pic */
-    box-shadow: 0px 0px 10px 2px rgba(63, 225, 240, 0.5);
     height: 50px;
     width: 50px;
     border-radius: 50%;
@@ -179,7 +104,6 @@ button {
 }
 
 .post-header h3 {
-    
     font-size: 18px;
     margin: 0;
 }
@@ -207,17 +131,16 @@ button {
     margin-right: 2rem;
 }
 
-.right-section {
-    display: flex;
-}
 
-#date-created{
+.post-footer .posted-details {
+    margin-left: auto;
     font-size: 14px;
     color: #999;
-
 }
-
-
+.post-footer p {
+    font-size: 14px;
+    color: #999;
+}
 
 #likebtn{
     
@@ -232,19 +155,9 @@ button {
 
 /* comment display */
 
-.comments {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
 
 
 .comment{
-    /* to give shadow */
-    /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
-    border: 1px solid #ddd;
-    border-radius: 5px; 
     display: none;
     border: 1px solid #ddd;
     width: 85%;
@@ -274,14 +187,17 @@ button {
 }
 
 .addNewComment form button {
-    height: 3.2rem;
-    color: #333;
-    background-color: #fac505c4;
-}
-
-.addNewComment form button:hover{
+    display: inline-block;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     
-    background-color: #d8b516;
+    height: 3rem;
+    width: auto;
+    background-color: #f5a623;
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
+    text-align: center;
 }
 
 
@@ -297,7 +213,6 @@ button {
 }
 
 .comment-header img {
-    box-shadow: 0px 0px 5px 1px rgba(39, 159, 239, 0.5);
     margin-top: 3px;
     margin-left: 2px;
     border-radius: 50%;
@@ -306,10 +221,8 @@ button {
 }
 
 .comment-name h4{
-   
     text-align: center;
     margin-top: -5px;
-    margin-left: 5px;
 }
 
 .comment-header p{
@@ -345,126 +258,105 @@ button {
 .comment-footer p {
     font-size: 14px;
     color: #999;
-    margin-right: 4px;
 }
 
 
-/* sidebar */
 
-.sidebar{
-    width: 250px;
-    height: 100%;
-    
-    border: 1px solid #ccc;
-    border-radius: 0 5px 0 0;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    
-}
+/* message box design */
 
-
-/* chat box */
-
-.chat-box {
+#messagebox{
+   
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 300px;
-    height: 400px;
-    background-color: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 0;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-    overflow: hidden;
+    width: auto;
+    height: 280px;
+    border: 2px solid #ddd;
+    margin: auto;
+    padding: 20px;
+    display: none;
+    /* border-radius: 10px; */
 }
 
-.chat-header {
-    background-color: #333;
-    color: #fff;
-    font-weight: bold;
-    padding: 10px;
-}
-
-.chat-messages {
-    height: 300px;
-    overflow-y: scroll;
-    padding: 10px;
-}
-
-.received p{
-    background-color: #94e511;
-    float: left;
-    clear: both;
-    padding: 5px;
-    border-radius: 10px;
-    height: auto;
-}
-
-.received small{
-    float: left;
-    clear: both;
-    margin-top: -15px;
-    color: rgb(45, 19, 19);
-}
-
-.sent p{
-    background-color: #00ccff;
-    color: #0e0101;
-    float: right;
-    clear: both;
-    padding: 5px;
-    border-radius: 10px;
-    height: auto;
-}
-.sent small{
-    color: rgb(45, 19, 19);
-    margin-top: -15px;
-    float: right;
-    clear: both;
-}
-
-.chat-input {
-    padding: 10px;
-    display: flex;
-    align-items: center;
-}
-
-.chat-input input[type="text"] {
-    flex: 1;
-    border: none;
-    border-bottom: 1px solid #ccc;
-    margin-right: 10px;
-    padding: 5px;
-}
-
-.chat-input button {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-#messageslider {
+#messagesend{
     position: fixed;
-    bottom: 370px;
+    height: 3rem;
+    width: 100%;
+    bottom: 0;
+}
+
+#messagesend input{
+    border: 2px solid #ddd;
+    background-color: #dddddd;
+    border-radius: 5px;
+    width: 200px;
+    margin-left: -10px;
+    padding: 10px;
+}
+
+#messagesend button{
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 50px;
+    margin-left: -5px;
+    padding: 10px;
+    background-color: #f5a623;
+    font-size: 15px;
+    text-align: left;
+    font-weight: bold;
+}
+span{
+    margin-left: -3px;
+}
+
+.message {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.received {
+    background-color: #e5e5ea;
+    float: left;
+    clear: both;
+}
+
+.sent {
+    background-color: #007bff;
+    color: #fff;
+    float: right;
+    clear: both;
+}
+
+.timestamp {
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+    text-align: right;
+}
+/* message slider */
+
+#messageslider{
+    position: fixed;
+    bottom: 290px;
     left: 0;
     width: auto;
     opacity: 0.7;
-    ;
+;
     /* border-radius: 10px; */
 }
 
 
-#messageslider2 {
+#messageslider2{
     position: fixed;
-    bottom: 370px;
-    left: 275px;
+    bottom: 290px;
+    left: 238px;
     width: auto;
     opacity: 0.6;
     display: none;
-    z-index: 1;
 }
+
 
 /* footer */
 

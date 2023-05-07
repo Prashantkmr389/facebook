@@ -14,7 +14,6 @@ const session = require("express-session");
 const passport = require("passport");
 const passportLocal = require("./config/passport-local");
 const localStrategy = require("passport-local").Strategy;
-const passportGoogle = require("./config/passport-google-oaut");
 
 //flash setup
 const flash = require("connect-flash");
@@ -25,14 +24,6 @@ const usersRouter = require("./routes/users");
 
 const app = express();
 
-// app.use(bodyParser.json());  
-// app.use(bodyParser.urlencoded({ extended: true }));
-
-// to socket.io setup
-const chatServer = require("http").Server(app);
-const chatSockets = require("./config/chat_sockets").chatSockets(chatServer);
-chatServer.listen(5000);
-console.log("chat server is listening on port 5000");
 
 
 
@@ -97,8 +88,6 @@ app.use(function (err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  console.log("error");
-  console.log(err);
   res.render("error");
 });
 

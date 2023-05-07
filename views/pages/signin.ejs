@@ -1,51 +1,11 @@
-<link rel="stylesheet" href="/css/signin.css">
-<!-- <div class="login-container">
-  <h1>Login</h1>
-  <form action="/user/create-session" method="post">
-    <label for="email">Email</label>
-    <input
-      type="email"
-      class="form-control"
-      id="email"
-      name="email"
-      placeholder="abc@gmail.com"
-      required
-    />
-
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" required />
-
-    <button type="submit">Login</button>
-    <div class="google-login">
-      <button type="button" onclick="googleLogin()">Login with Google</button>
+<form action="/user/create-session" method="post">
+    
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+        <br>
+        <label for="password">Password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        <button type="submit">Login</button>
     </div>
-  </form>
-</div> -->
-
-  <form action="/user/create-session" method="post">
-  <h1>Log In</h1>
-  <div class="input-group">
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email" placeholder="abc@gmail.com" required/>
-  </div>
-  <div class="input-group">
-    <label for="password">Password:</label>
-    <input type="password" id="password" name="password" />
-  </div>
-  <a href="/resetpassword">Forget Password</a>
-  <button type="submit">Sign In</button>
-  <div class="google-login">
-    <button type="button" class="google-login">Sign In with Google</button>
-  </div>
-  
 </form>
-
-<div class="dummy">
-
-</div>
-
-<script>
-  document.querySelector(".google-login").addEventListener("click", () => {
-    window.location.href = "/user/auth/google";
-  });
-</script>
