@@ -1,13 +1,16 @@
-const mongoose = require('mongoose')
 
-mongoose.connect("mongodb://127.0.0.1:27017/facebook");
+const mongoose = require("mongoose");
 
-const db = mongoose.connection
+mongoose.connect(
+  "mongodb+srv://doxx:822eB6x7yq2aPzX@cluster0.ht4cn.mongodb.net/Facebook?retryWrites=true&w=majority"
+);
 
-db.on('error', console.error.bind(console, 'connection error:'))
+const db = mongoose.connection;
 
-db.once('open', function() {
-    console.log('Connected to MongoDB')
-})
+db.on("error", console.error.bind(console, "connection error:"));
 
-module.exports = db
+db.once("open", function () {
+  console.log("Connected to MongoDB");
+});
+
+module.exports = db;
