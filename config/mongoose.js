@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-mongoose.connect("mongodb://127.0.0.1:27017/facebook");
+mongoose.connect("mongodb+srv://doxx:822eB6x7yq2aPzX@cluster0.ht4cn.mongodb.net/Facebook?retryWrites=true&w=majority");
 
 const db = mongoose.connection
 

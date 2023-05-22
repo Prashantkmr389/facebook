@@ -23,6 +23,7 @@ const indexRouter = require("./routes/index");
 const usersRouter = require("./routes/users");
 
 const app = express();
+const MONGO_URI = "mongodb+srv://doxx:822eB6x7yq2aPzX@cluster0.ht4cn.mongodb.net/Facebook?retryWrites=true&w=majority"
 
 
 
@@ -46,7 +47,7 @@ app.use(
     resave: false,
     store: Mongostore.create(
       {
-        mongoUrl: "mongodb://127.0.0.1/facebook",
+        mongoUrl: MONGO_URI,
         autoRemove: "disabled",
       },
       function (err) {
@@ -81,6 +82,7 @@ app.use(function (req, res, next) {
 });
 
 // error handler
+
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
